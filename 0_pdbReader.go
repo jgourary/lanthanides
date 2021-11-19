@@ -53,6 +53,7 @@ func pdbReader(filePath string) (string, map[int]*atom) {
 
 			// assign element
 			newAtom.element = tokens[2]
+			newAtom.aminoAcid = tokens[3]
 			newAtom.residue = tokens[5]
 
 			// assign positions

@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"log"
+	filepath2 "path/filepath"
 	"strconv"
 )
 
@@ -11,19 +14,34 @@ var disk = 200
 var basisSet = "Def2TZVP"
 var DFT = "PBE1PBE"
 var charge = 3
-var shellDist = 3.0
+var shellDist = 5.0
 var ion = "LA"
+
+var aminoAcidTally = make(map[string]int)
 
 // Program begins here
 func main() {
-	path := "C:\\Users\\jtgou\\lanthanides\\test\\7cco.pdb"
+	inDir := "C:\\Users\\jtgou\\lanthanides\\test"
 	outDir := "C:\\Users\\jtgou\\lanthanides\\test"
-	fmt.Println("Processing file at: " + path)
-	pdb2Systems(path, outDir)
+	fmt.Println("Processing directory at: " + inDir)
+
+	// Read in all files in dir
+	fileInfo, err := ioutil.ReadDir(inDir)
+	if err != nil {
+		fmt.Println("failed to read directory: " + inDir)
+		log.Fatal(err)
+	}
+
+	for _, file := range fileInfo {
+		if filepath2.Ext(file.Name()) == ".pdb" {
+			pdb2Systems(filepath2.Join(inDir, file.Name()), outDir)
+		}
+	}
+	finalizeAATallies()
 }
 
 func pdb2Systems(path string, dir string) {
-	fmt.Println("Reading in file..")
+	fmt.Println("Reading in file at: " + path)
 	sysName, atoms := pdbReader(path)
 	fmt.Println("Read in file with " + strconv.Itoa(len(atoms)) + " atoms.")
 	fmt.Println("Finding ion systems in file...")
@@ -32,7 +50,33 @@ func pdb2Systems(path string, dir string) {
 	fmt.Println("Writing systems...")
 	for i, system := range systems {
 		outName := sysName + "_" + strconv.Itoa(i)
-		writeSystemGJF(system.atoms, ion, dir, outName)
+		writeSystemGJF(*system, ion, dir, outName)
 	}
+	addToAATallies(systems)
+}
 
+func addToAATallies(systems []*ionSystem) {
+	for _, system := range systems {
+		for _, v := range system.residueList {
+			if _, ok := aminoAcidTally[v]; ok {
+				aminoAcidTally[v] += 1
+			} else {
+				aminoAcidTally[v] = 1
+			}
+		}
+	}
+}
+
+func finalizeAATallies() {
+
+	total := 0
+	for _, v := range aminoAcidTally {
+		total += v
+	}
+	floatTotal := float64(total)
+	fmt.Println("\nAmino Acids in Binding Pockets (n = " + strconv.Itoa(total) + "): ")
+	for k, v := range aminoAcidTally {
+		floatV := float64(v)
+		fmt.Println(k + " = " + fmt.Sprintf("%.3f", floatV / floatTotal))
+	}
 }

@@ -4,9 +4,8 @@ import (
 	"math"
 )
 
-func structure2Systems(atoms map[int]*atom, ion string, shellDist float64) []ionSystem {
-	var ionSystems []ionSystem
-
+func structure2Systems(atoms map[int]*atom, ion string, shellDist float64) []*ionSystem {
+	var ionSystems []*ionSystem
 	// initialize systems with center ion
 	for id, thisAtom := range atoms {
 		if thisAtom.element == ion {
@@ -18,19 +17,19 @@ func structure2Systems(atoms map[int]*atom, ion string, shellDist float64) []ion
 			newSystem.atoms = atomList
 			newSystem.center = thisAtom.pos
 
-			ionSystems = append(ionSystems, newSystem)
+			ionSystems = append(ionSystems, &newSystem)
 		}
 	}
 
 	// add atoms from all neighboring waters within distance specified
 	for _, system := range ionSystems {
-		approvedResidues := make(map[string]int)
+		approvedResidues := make(map[string]string)
 
 		// mark residues in range
 		for _, thisAtom := range atoms {
 			if getDistance(thisAtom, system.center) < shellDist {
 
-				approvedResidues[thisAtom.residue] = 1
+				approvedResidues[thisAtom.residue] = thisAtom.aminoAcid
 			}
 		}
 
@@ -40,8 +39,11 @@ func structure2Systems(atoms map[int]*atom, ion string, shellDist float64) []ion
 				system.atoms[id] = thisAtom
 			}
 		}
-	}
 
+		// add residue record
+		system.residueList = approvedResidues
+
+	}
 	return ionSystems
 }
 

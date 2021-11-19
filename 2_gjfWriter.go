@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func writeSystemGJF(atoms map[int]*atom, ion string, dir string, fileName string) {
+func writeSystemGJF(system ionSystem, ion string, dir string, fileName string) {
 	os.MkdirAll(dir, 0755)
 	thisPath := filepath2.Join(dir, fileName + ".gjf")
 	fmt.Println("Creating file at " + thisPath)
@@ -24,12 +24,19 @@ func writeSystemGJF(atoms map[int]*atom, ion string, dir string, fileName string
 	_, err = thisFile.WriteString("%mem=" + strconv.Itoa(mem) + "gb\n")
 	_, err = thisFile.WriteString("#p " + basisSet + " " + DFT + " maxDisk=" + strconv.Itoa(disk) + " nosymm Counterpoise=2\n\n")
 	_, err = thisFile.WriteString("Counterpoise\n\n")
+	_, err = thisFile.WriteString("! Num Residues = " + strconv.Itoa(len(system.residueList)) + "\n")
+	line := "! Residue List = "
+	for k, v := range system.residueList {
+		line += k + ":" + v + ", "
+	}
+	_, err = thisFile.WriteString(line + "\n\n")
+
 
 
 	// write body
 	_, err = thisFile.WriteString(strconv.Itoa(charge) + ",1 0,1 " + strconv.Itoa(charge) + ",1\n")
 	j := 1
-	for _, thisAtom := range atoms {
+	for _, thisAtom := range system.atoms {
 
 		line := thisAtom.element
 		if thisAtom.element == ion {
@@ -41,6 +48,10 @@ func writeSystemGJF(atoms map[int]*atom, ion string, dir string, fileName string
 		line += "\t" + fmt.Sprintf("%.6f", thisAtom.pos[0]) + "\t" +
 			fmt.Sprintf("%.6f", thisAtom.pos[1]) + "\t" + fmt.Sprintf("%.6f", thisAtom.pos[2])
 
+		// add comment
+		line += "\t\t! " + thisAtom.residue + " " + thisAtom.aminoAcid
+
+		// write to file
 		_, err := thisFile.WriteString(line + "\n")
 		if err != nil {
 			fmt.Println("Failed to write atom")
