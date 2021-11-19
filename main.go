@@ -14,7 +14,7 @@ var disk = 200
 var basisSet = "Def2TZVP"
 var DFT = "PBE1PBE"
 var charge = 3
-var shellDist = 5.0
+var shellDist = 2.8
 var ion = "LA"
 
 var aminoAcidTally = make(map[string]int)
