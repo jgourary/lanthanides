@@ -38,7 +38,7 @@ func pdbReader(filePath string) (string, map[int]*atom) {
 		tokens := strings.Fields(line)
 
 		// check line length before proceeding
-		if len(tokens) >= 6 && (tokens[0] == "ATOM" || tokens[0] == "HETATM") {
+		if len(tokens) >= 8 && (tokens[0] == "ATOM" || tokens[0] == "HETATM") {
 
 			// create new atom
 			var newAtom atom
@@ -61,7 +61,7 @@ func pdbReader(filePath string) (string, map[int]*atom) {
 			for j := 6; j < 9; j++ {
 				pos[j-6], err = strconv.ParseFloat(tokens[j],64)
 				if err != nil {
-					newErr := errors.New("Failed to convert token in position 0 on line " + strconv.Itoa(j) + " to a float64")
+					newErr := errors.New("Failed to convert \"" + tokens[j] + "\" in position 0 on line " + strconv.Itoa(i) + " to a float64")
 					log.Fatal(newErr)
 				}
 			}

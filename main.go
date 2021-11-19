@@ -21,8 +21,8 @@ var aminoAcidTally = make(map[string]int)
 
 // Program begins here
 func main() {
-	inDir := "C:\\Users\\jtgou\\lanthanides\\test"
-	outDir := "C:\\Users\\jtgou\\lanthanides\\test"
+	inDir := "C:\\Users\\jtgou\\lanthanides\\input"
+	outDir := "C:\\Users\\jtgou\\lanthanides\\output"
 	fmt.Println("Processing directory at: " + inDir)
 
 	// Read in all files in dir
@@ -74,7 +74,7 @@ func finalizeAATallies() {
 		total += v
 	}
 	floatTotal := float64(total)
-	fmt.Println("\nAmino Acids in Binding Pockets (n = " + strconv.Itoa(total) + "): ")
+	fmt.Println("\nAmino Acids in Binding Pockets (n = " + strconv.Itoa(total) + " residues): ")
 	for k, v := range aminoAcidTally {
 		floatV := float64(v)
 		fmt.Println(k + " = " + fmt.Sprintf("%.3f", floatV / floatTotal))
