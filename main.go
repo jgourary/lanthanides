@@ -25,6 +25,8 @@ func main() {
 	outDir := "C:\\Users\\jtgou\\lanthanides\\output"
 	fmt.Println("Processing directory at: " + inDir)
 
+	totalSystems := 0
+
 	// Read in all files in dir
 	fileInfo, err := ioutil.ReadDir(inDir)
 	if err != nil {
@@ -34,13 +36,14 @@ func main() {
 
 	for _, file := range fileInfo {
 		if filepath2.Ext(file.Name()) == ".pdb" {
-			pdb2Systems(filepath2.Join(inDir, file.Name()), outDir)
+			totalSystems += pdb2Systems(filepath2.Join(inDir, file.Name()), outDir)
 		}
 	}
 	finalizeAATallies()
+	fmt.Println("Processed " + strconv.Itoa(totalSystems))
 }
 
-func pdb2Systems(path string, dir string) {
+func pdb2Systems(path string, dir string) int {
 	fmt.Println("Reading in file at: " + path)
 	sysName, atoms := pdbReader(path)
 	fmt.Println("Read in file with " + strconv.Itoa(len(atoms)) + " atoms.")
@@ -53,6 +56,7 @@ func pdb2Systems(path string, dir string) {
 		writeSystemGJF(*system, ion, dir, outName)
 	}
 	addToAATallies(systems)
+	return len(systems)
 }
 
 func addToAATallies(systems []*ionSystem) {

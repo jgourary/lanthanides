@@ -17,7 +17,15 @@ func structure2Systems(atoms map[int]*atom, ion string, shellDist float64) []*io
 			newSystem.atoms = atomList
 			newSystem.center = thisAtom.pos
 
-			ionSystems = append(ionSystems, &newSystem)
+			isDuplicate := false
+			for _, sys2 := range ionSystems {
+				if isSameSite(&newSystem, sys2) {
+					isDuplicate = true
+				}
+			}
+			if !isDuplicate {
+				ionSystems = append(ionSystems, &newSystem)
+			}
 		}
 	}
 
@@ -45,6 +53,18 @@ func structure2Systems(atoms map[int]*atom, ion string, shellDist float64) []*io
 
 	}
 	return ionSystems
+}
+
+func isSameSite(sys1 *ionSystem, sys2 *ionSystem) bool {
+	dx2 := math.Pow(sys1.center[0] - sys2.center[0], 2)
+	dy2 := math.Pow(sys1.center[1] - sys2.center[1], 2)
+	dz2 := math.Pow(sys1.center[2] - sys2.center[2], 2)
+	dist := math.Sqrt(dx2 + dy2 + dz2)
+	if dist < 5 {
+		return true
+	} else {
+		return false
+	}
 }
 
 func getDistance(atom1 *atom, pos []float64) float64 {
