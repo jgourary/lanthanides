@@ -52,7 +52,19 @@ func structure2Systems(atoms map[int]*atom, ion string, shellDist float64) []*io
 		system.residueList = approvedResidues
 
 	}
+
+	// remove mono-residue systems
+	for i, system := range ionSystems {
+		if len(system.residueList) < 2 {
+			ionSystems = remove(ionSystems, i)
+		}
+	}
 	return ionSystems
+}
+
+func remove(s []*ionSystem, i int) []*ionSystem {
+	s[i] = s[len(s)-1]
+	return s[:len(s)-1]
 }
 
 func isSameSite(sys1 *ionSystem, sys2 *ionSystem) bool {

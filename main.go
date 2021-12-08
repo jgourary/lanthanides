@@ -21,11 +21,13 @@ var aminoAcidTally = make(map[string]int)
 
 // Program begins here
 func main() {
-	inDir := "C:\\Users\\jtgou\\lanthanides\\input"
-	outDir := "C:\\Users\\jtgou\\lanthanides\\output"
+	inDir := "C:\\Users\\jtgou\\OneDrive\\Documents\\UT_Austin\\ren_lab\\lanthanides\\lanthanides\\input"
+	outDir := "C:\\Users\\jtgou\\OneDrive\\Documents\\UT_Austin\\ren_lab\\lanthanides\\lanthanides\\output"
 	fmt.Println("Processing directory at: " + inDir)
 
 	totalSystems := 0
+	totalResidues := 0
+	totalStructures := 0
 
 	// Read in all files in dir
 	fileInfo, err := ioutil.ReadDir(inDir)
@@ -36,14 +38,19 @@ func main() {
 
 	for _, file := range fileInfo {
 		if filepath2.Ext(file.Name()) == ".pdb" {
-			totalSystems += pdb2Systems(filepath2.Join(inDir, file.Name()), outDir)
+			sysNum, resNum := pdb2Systems(filepath2.Join(inDir, file.Name()), outDir)
+			totalSystems += sysNum
+			totalResidues += resNum
+			totalStructures++
 		}
 	}
 	finalizeAATallies()
-	fmt.Println("Processed " + strconv.Itoa(totalSystems))
+	fmt.Println("Processed " + strconv.Itoa(totalSystems) + " Systems from " + strconv.Itoa(totalStructures) + " Structures")
+	fmt.Println("Total Residues: " + strconv.Itoa(totalResidues))
 }
 
-func pdb2Systems(path string, dir string) int {
+func pdb2Systems(path string, dir string) (int, int) {
+	residueCount := 0
 	fmt.Println("Reading in file at: " + path)
 	sysName, atoms := pdbReader(path)
 	fmt.Println("Read in file with " + strconv.Itoa(len(atoms)) + " atoms.")
@@ -53,10 +60,11 @@ func pdb2Systems(path string, dir string) int {
 	fmt.Println("Writing systems...")
 	for i, system := range systems {
 		outName := sysName + "_" + strconv.Itoa(i)
-		writeSystemGJF(*system, ion, dir, outName)
+		residueNum := writeSystemGJF(*system, ion, dir, outName)
+		residueCount += residueNum
 	}
 	addToAATallies(systems)
-	return len(systems)
+	return len(systems), residueCount
 }
 
 func addToAATallies(systems []*ionSystem) {
@@ -68,7 +76,11 @@ func addToAATallies(systems []*ionSystem) {
 				aminoAcidTally[v] = 1
 			}
 		}
+		aminoAcidTally["LA"]--
 	}
+
+	// remove duplicate La
+
 }
 
 func finalizeAATallies() {

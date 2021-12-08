@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func writeSystemGJF(system ionSystem, ion string, dir string, fileName string) {
+func writeSystemGJF(system ionSystem, ion string, dir string, fileName string) int {
 	os.MkdirAll(dir, 0755)
 	thisPath := filepath2.Join(dir, fileName + ".gjf")
 	fmt.Println("Creating file at " + thisPath)
@@ -60,4 +60,6 @@ func writeSystemGJF(system ionSystem, ion string, dir string, fileName string) {
 		j++
 	}
 	_, err = thisFile.WriteString("\n")
+
+	return len(system.residueList)
 }

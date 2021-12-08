@@ -4,13 +4,16 @@
     <list default="true" id="84031d04-288f-42c9-ac18-55caa883a445" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/1_structure2systems.go" beforeDir="false" afterPath="$PROJECT_DIR$/1_structure2systems.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2_gjfWriter.go" beforeDir="false" afterPath="$PROJECT_DIR$/2_gjfWriter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/1djg_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_0.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/1djg_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_1.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/1djg_2.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_2.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/1djg_3.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_3.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_4.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_4.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_5.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_5.gjf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/1djg_4.gjf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/1djg_5.gjf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/1djg_6.gjf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/1djg_7.gjf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/output/1kqv_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1kqv_0.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/1ksm_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1ksm_0.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/1nkf_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1nkf_0.gjf" afterDir="false" />
@@ -20,13 +23,15 @@
       <change beforePath="$PROJECT_DIR$/output/2oqr_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2oqr_1.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/2oqr_2.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2oqr_2.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/2oqr_3.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2oqr_3.gjf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/2oqr_4.gjf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/output/5kij_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5kij_0.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/5kkb_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5kkb_0.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/5kkb_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5kkb_1.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/5ytq_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5ytq_0.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/5ytq_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5ytq_1.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/5ytq_2.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5ytq_2.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5ytq_3.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5ytq_3.gjf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/5ytq_3.gjf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/5ytq_4.gjf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/output/6dam_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6dam_0.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/6ip9_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6ip9_0.gjf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/6oc5_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6oc5_0.gjf" afterDir="false" />
@@ -59,10 +64,11 @@
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../go/src/bilayerProcessorManualFinal" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -93,39 +99,5 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="267" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637174547937">
-      <screen x="0" y="0" width="1620" height="1040" />
-    </state>
-    <state x="267" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1620.1040@0.0.1620.1040" timestamp="1637174547937" />
-    <state x="592" y="276" key="FileChooserDialogImpl" timestamp="1637773822458">
-      <screen x="0" y="0" width="1620" height="1040" />
-    </state>
-    <state x="592" y="276" key="FileChooserDialogImpl/0.0.1620.1040@0.0.1620.1040" timestamp="1637773822458" />
-    <state width="1564" height="402" key="GridCell.Tab.0.bottom" timestamp="1637604248020">
-      <screen x="0" y="0" width="1620" height="1040" />
-    </state>
-    <state width="1564" height="402" key="GridCell.Tab.0.bottom/0.0.1620.1040@0.0.1620.1040" timestamp="1637604248020" />
-    <state width="1564" height="402" key="GridCell.Tab.0.center" timestamp="1637604248019">
-      <screen x="0" y="0" width="1620" height="1040" />
-    </state>
-    <state width="1564" height="402" key="GridCell.Tab.0.center/0.0.1620.1040@0.0.1620.1040" timestamp="1637604248019" />
-    <state width="1564" height="402" key="GridCell.Tab.0.left" timestamp="1637604248019">
-      <screen x="0" y="0" width="1620" height="1040" />
-    </state>
-    <state width="1564" height="402" key="GridCell.Tab.0.left/0.0.1620.1040@0.0.1620.1040" timestamp="1637604248019" />
-    <state width="1564" height="402" key="GridCell.Tab.0.right" timestamp="1637604248020">
-      <screen x="0" y="0" width="1620" height="1040" />
-    </state>
-    <state width="1564" height="402" key="GridCell.Tab.0.right/0.0.1620.1040@0.0.1620.1040" timestamp="1637604248020" />
-    <state x="520" y="253" width="579" height="534" key="find.popup" timestamp="1637359462952">
-      <screen x="0" y="0" width="1620" height="1040" />
-    </state>
-    <state x="520" y="253" width="579" height="534" key="find.popup/0.0.1620.1040@0.0.1620.1040" timestamp="1637359462952" />
-    <state x="473" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1637351669237">
-      <screen x="0" y="0" width="1620" height="1040" />
-    </state>
-    <state x="473" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1620.1040@0.0.1620.1040" timestamp="1637351669237" />
   </component>
 </project>
