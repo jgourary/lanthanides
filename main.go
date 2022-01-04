@@ -19,6 +19,7 @@ var ion = "LA"
 
 var aminoAcidTally = make(map[string]int)
 
+// Function: analyze PDB structures with Lanthanide ions and extract binding site structures and metadata about those structures
 // Program begins here
 func main() {
 	inDir := "C:\\Users\\jtgou\\OneDrive\\Documents\\UT_Austin\\ren_lab\\lanthanides\\lanthanides\\input"

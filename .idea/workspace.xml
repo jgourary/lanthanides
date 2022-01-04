@@ -3,42 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84031d04-288f-42c9-ac18-55caa883a445" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_structure2systems.go" beforeDir="false" afterPath="$PROJECT_DIR$/1_structure2systems.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2_gjfWriter.go" beforeDir="false" afterPath="$PROJECT_DIR$/2_gjfWriter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_1.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_2.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_2.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_3.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1djg_3.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_4.gjf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_5.gjf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_6.gjf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1djg_7.gjf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1kqv_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1kqv_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1ksm_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1ksm_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/1nkf_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/1nkf_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/2i18_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2i18_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/2k0j_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2k0j_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/2oqr_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2oqr_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/2oqr_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2oqr_1.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/2oqr_2.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2oqr_2.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/2oqr_3.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/2oqr_3.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/2oqr_4.gjf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5kij_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5kij_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5kkb_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5kkb_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5kkb_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5kkb_1.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5ytq_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5ytq_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5ytq_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5ytq_1.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5ytq_2.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/5ytq_2.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5ytq_3.gjf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/5ytq_4.gjf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/6dam_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6dam_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/6ip9_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6ip9_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/6oc5_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6oc5_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/6oc5_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6oc5_1.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/6oc6_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6oc6_0.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/6oc6_1.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/6oc6_1.gjf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/7cco_0.gjf" beforeDir="false" afterPath="$PROJECT_DIR$/output/7cco_0.gjf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +33,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
