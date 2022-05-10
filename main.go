@@ -22,8 +22,25 @@ var aminoAcidTally = make(map[string]int)
 // Function: analyze PDB structures with Lanthanide ions and extract binding site structures and metadata about those structures
 // Program begins here
 func main() {
-	inDir := "C:\\Users\\jtgou\\OneDrive\\Documents\\UT_Austin\\ren_lab\\lanthanides\\lanthanides\\input"
-	outDir := "C:\\Users\\jtgou\\OneDrive\\Documents\\UT_Austin\\ren_lab\\lanthanides\\lanthanides\\output"
+	inDir := "C:\\Users\\jtgou\\OneDrive\\Documents\\UT_Austin\\ren_lab\\lanthanides\\pdb_lanthanides\\input"
+	outDir := "C:\\Users\\jtgou\\OneDrive\\Documents\\UT_Austin\\ren_lab\\lanthanides\\pdb_lanthanides\\output"
+
+	fileInfo, err := ioutil.ReadDir(inDir)
+	if err != nil {
+		fmt.Println("failed to read directory: " + inDir)
+		log.Fatal(err)
+	}
+
+	for _, dir := range fileInfo {
+		if dir.IsDir() {
+			absInPath := filepath2.Join(inDir, dir.Name())
+			absOutPath := filepath2.Join(outDir, dir.Name())
+			singleIonAnalysis(absInPath, absOutPath)
+		}
+	}
+}
+
+func singleIonAnalysis(inDir string, outDir string) {
 	fmt.Println("Processing directory at: " + inDir)
 
 	totalSystems := 0
@@ -53,14 +70,14 @@ func main() {
 func pdb2Systems(path string, dir string) (int, int) {
 	residueCount := 0
 	fmt.Println("Reading in file at: " + path)
-	sysName, atoms := pdbReader(path)
-	fmt.Println("Read in file with " + strconv.Itoa(len(atoms)) + " atoms.")
+	structName, structAtoms := pdbReader(path)
+	fmt.Println("Read in file with " + strconv.Itoa(len(structAtoms)) + " structAtoms.")
 	fmt.Println("Finding ion systems in file...")
-	systems := structure2Systems(atoms, ion, shellDist)
+	systems := structure2Systems(structAtoms, ion, shellDist)
 	fmt.Println("Found " + strconv.Itoa(len(systems)) + " systems.")
 	fmt.Println("Writing systems...")
 	for i, system := range systems {
-		outName := sysName + "_" + strconv.Itoa(i)
+		outName := structName + "_" + strconv.Itoa(i)
 		residueNum := writeSystemGJF(*system, ion, dir, outName)
 		residueCount += residueNum
 	}
@@ -94,6 +111,6 @@ func finalizeAATallies() {
 	fmt.Println("\nAmino Acids in Binding Pockets (n = " + strconv.Itoa(total) + " residues): ")
 	for k, v := range aminoAcidTally {
 		floatV := float64(v)
-		fmt.Println(k + " = " + fmt.Sprintf("%.3f", floatV / floatTotal))
+		fmt.Println(k + " = " + fmt.Sprintf("%.3f", floatV/floatTotal))
 	}
 }
